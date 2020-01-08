@@ -19,6 +19,7 @@ public class BoardCategory {
 	@Column(name = "category_name")
 	private String categoryName;
 
+
 	public BoardCategory() {
 	}
 
