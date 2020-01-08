@@ -2,16 +2,18 @@ package com.scrollboard.springboot.model;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="board")
 public class Board {
 
 	@Id
@@ -19,11 +21,11 @@ public class Board {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int boardNo;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name = "user_id")
 	private Users users;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name = "category_no")
 	private BoardCategory boardCategory;
 

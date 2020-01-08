@@ -8,7 +8,7 @@ public class ScrollBoardApplication {
 
 	public static void main(String[] args) {
 		//SpringApplication.run(ScrollBoardApplication.class, args);
-		new SpringApplicationBuilder(ScrollBoardApplication.class).properties("spring.config.location=" +"classpath:/db.properties").run(args);
+		new SpringApplicationBuilder(ScrollBoardApplication.class).properties("spring.config.location=" + "classpath:/application.properties" +",classpath:/db.properties").run(args);
 	}
 
 }
